@@ -1,10 +1,7 @@
 image: node:latest
 
-stages:
-  - mirror
-
 mirror_to_github:
-  stage: mirror
+  stage: build
   before_script:
     - 'which ssh-agent || ( apt-get update -y && apt-get install openssh-client -y )'
     - apt-get update -q && apt-get install -y -q git
@@ -17,6 +14,7 @@ mirror_to_github:
     - main
 
 pages:
+  stage: deploy
   script:
     - mkdir public
     - echo "<html><body><h1>CribThem Releases</h1>" > public/index.html

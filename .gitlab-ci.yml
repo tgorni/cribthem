@@ -2,13 +2,13 @@ image: node:latest
 
 pages:
   script:
-    - mkdir .public
-    - echo "<html><body><h1>Release Downloads</h1>" > .public/index.html
-    - echo "<a href='https://gitlab.com/tgorni/cribthem/-/archive/v1.1.0/cribthem-v1.1.0.zip'>Download Release Asset</a>" >> .public/index.html
-    - echo "</body></html>" >> .public/index.html
+    - mkdir public
+    - echo "<html><body><h1>Release Downloads</h1>" > public/index.html
+    - echo "<a href='https://gitlab.com/tgorni/cribthem/-/archive/v1.1.0/cribthem-v1.1.0.zip'>Download Release Asset</a>" >> public/index.html
+    - echo "</body></html>" >> public/index.html
   artifacts:
     paths:
-      - .public
+      - public
   only:
     - main
 

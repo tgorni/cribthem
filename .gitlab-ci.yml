@@ -21,9 +21,9 @@ pages:
   script:
     - mkdir public
     - echo "<html><body><h1>CribThem Releases</h1>" > public/index.html
-    - echo "<a href='https://gitlab.com/tgorni/cribthem/-/archive/v1.1.0/cribthem-v1.1.0.zip'>cribthem-v1.1.0</a>" >> public/index.html
-    - echo "<a href='https://gitlab.com/tgorni/cribthem/-/archive/v1.1.0/cribthem-v1.0.0.zip'>cribthem-v1.0.0</a>" >> public/index.html
-    - echo "<a href='https://gitlab.com/tgorni/cribthem/-/archive/v1.1.0/cribthem-v0.0.1.zip'>cribthem-v0.0.1</a>" >> public/index.html
+    - echo "<a href='https://gitlab.com/tgorni/cribthem/-/archive/v1.1.0/cribthem-v1.1.0.zip'>cribthem-v1.1.0</a><br>" >> public/index.html
+    - echo "<a href='https://gitlab.com/tgorni/cribthem/-/archive/v1.1.0/cribthem-v1.0.0.zip'>cribthem-v1.0.0</a><br>" >> public/index.html
+    - echo "<a href='https://gitlab.com/tgorni/cribthem/-/archive/v1.1.0/cribthem-v0.0.1.zip'>cribthem-v0.0.1</a><br>" >> public/index.html
     - echo "</body></html>" >> public/index.html
   artifacts:
     paths:

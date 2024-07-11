@@ -1,5 +1,21 @@
 image: node:latest
 
+stages:
+  - mirror
+
+mirror_to_github:
+  stage: mirror
+  before_script:
+    - 'which ssh-agent || ( apt-get update -y && apt-get install openssh-client -y )'
+    - apt-get update -q && apt-get install -y -q git
+    - git config --global user.name "tgorni"
+    - git config --global user.email "gornitom@gmail.com"
+  script:
+    - git remote add github https://$GITHUB_TOKEN@github.com/tgorni/cribthem.git
+    - git push -f github main:main
+  only:
+    - main
+
 pages:
   script:
     - mkdir public

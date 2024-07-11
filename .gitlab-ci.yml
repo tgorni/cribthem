@@ -8,6 +8,9 @@ mirror_to_github:
     - git config --global user.name "tgorni"
     - git config --global user.email "gornitom@gmail.com"
   script:
+    - git remote add origin https://gitlab-ci-token:${CI_JOB_TOKEN}@${CI_SERVER_HOST}/${CI_PROJECT_PATH}.git
+    - git fetch origin
+    - git checkout -b main origin/main  # Ensure the branch is checked out
     - git remote add github https://$GITHUB_TOKEN@github.com/tgorni/cribthem.git
     - git push -f github main:main
   only:
